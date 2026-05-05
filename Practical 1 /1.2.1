@@ -1,0 +1,28 @@
+# Read number of courses
+n = int(input().strip())
+
+# Read marks
+marks = list(map(int, input().strip().split()))
+
+# Check if student fails in any course
+for mark in marks:
+    if mark < 40:
+        print("Fail")
+        break
+else:
+    # Calculate aggregate percentage
+    aggregate = sum(marks) / n
+    
+    print(f"Aggregate Percentage: {aggregate:.2f}")
+    
+    # Determine grade
+    if aggregate > 75:
+        grade = "Distinction"
+    elif 60 <= aggregate < 75:
+        grade = "First Division"
+    elif 50 <= aggregate < 60:
+        grade = "Second Division"
+    elif 40 <= aggregate < 50:
+        grade = "Third Division"
+    
+    print(f"Grade: {grade}")
